@@ -20,7 +20,6 @@ int	ft_printf_unsigned(unsigned int n);
 int	ft_printf_pointer(void *ptr);
 int	ft_printf_hex_up(unsigned long n);
 int	ft_printf_hex_low(unsigned long n);
-int	ft_putpointer(void *ptr);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);

@@ -6,11 +6,11 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 17:41:32 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/06/12 18:05:14 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:27:04 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#inlclude "get_next_line.h"
+#include "get_next_line.h"
 
 void	*ft_memcopy(void *dest, const void *src, size_t n)
 {
@@ -21,7 +21,7 @@ void	*ft_memcopy(void *dest, const void *src, size_t n)
 		return (NULL);
 	pdest = (unsigned char *)dest;
 	psrc = (unsigned char *)src;
-	while(n--)
+	while (n--)
 		*pdest++ = *psrc++;
 	return (dest);
 }
@@ -32,7 +32,7 @@ size_t	strlen_at(const char *str, int avoid)
 
 	i = 0;
 	if (!str)
-		return (NUUL);
+		return (NULL);
 	while (str[i] && str[i] != avoid)
 		i++;
 	return (i);
@@ -41,7 +41,7 @@ size_t	strlen_at(const char *str, int avoid)
 char	*find_chr(const char *buffer, int to_find)
 {
 	if (!buffer)
-		return(NULL);
+		return (NULL);
 	while (*buffer)
 	{
 		if (*(unsigned char *)buffer == (unsigned char)to_find)

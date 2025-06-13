@@ -6,7 +6,7 @@ int	main(void)
 {
 	int		ret1;
 	int		ret2;
-	char	*str = "Hello, 42!";
+	char	*str = "Hello, 42!Porto";
 	int		n = 42;
 	unsigned int u = 3000000000;
 	void	*ptr = &n;

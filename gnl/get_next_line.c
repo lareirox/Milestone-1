@@ -6,7 +6,7 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 12:43:49 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/06/12 17:41:07 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:28:06 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ static char	*get_current_buffer(int fd, char *buffer)
 	{
 		bytes = read(fd, current, BUFFER_SIZE);
 		if (bytes == 0)
-			break;
+			break ;
 		if (bytes == -1)
 		{
 			free(current);
 			return (NULL);
 		}
-		current[bytes] = '\0',
+		current[bytes] = '\0';
 		buffer = merge_last_current(buffer, current);
 	}
 	free (current);

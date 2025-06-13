@@ -6,7 +6,7 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:57:32 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:42 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/06/13 15:58:55 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ int	ft_printf_unsigned(unsigned int n)
 
 	j = 0;
 	i = n;
-	if (i < 0)
-	{
-		i = -i;
-		j += ft_putchar('-');
-	}
 	if (i >= 10)
 		j += ft_printf_unsigned(i / 10);
 	j += ft_putchar((n % 10) + '0');
