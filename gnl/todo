@@ -44,3 +44,8 @@ Norminette Errors: main.c
 
 Failed tests: fsoares
 
+resolvido o read error com o free do buffer e do current, ja nao tem memory leah
+
+resolver o 1char
+
+

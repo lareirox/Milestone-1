@@ -18,7 +18,9 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
-# include <fcntl.h>
+# include <fcntl.h>// This function will allow you to open and access a file. 
+// It is prototyped this way:
+// int open (const char* path, int flags [, int mode ]):
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

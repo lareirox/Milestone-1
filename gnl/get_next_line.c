@@ -6,7 +6,7 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 12:43:49 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/07/02 11:26:11 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:40:12 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-/* 
+/*
 int	main(void)
 {
 	int		fd;
@@ -103,4 +103,31 @@ int	main(void)
 	}
 	close(fd);
 	return (0);
-}  */
+}
+*/
+
+#include <stdio.h>
+int	main(int argc, char **argv)
+{
+	char *line;
+	(void)argc;
+	int fd = open(argv[1], O_RDONLY);
+	while ((line = get_next_line(fd)) != NULL)
+    {
+        printf("%s", line);
+        free(line);
+    }
+    close(fd);
+	return (0);
+}
+//int	main()
+//{
+//	int i = 0;
+//
+//	while (i < 4)
+//	{
+//		printf("%s\n", get_next_line(0));
+//		i++;
+//	}
+//    return (0);
+//}
