@@ -6,13 +6,13 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 12:43:49 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/06/13 16:28:06 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:34:46 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*get_next_line(char **buffer)
+static char	*get_line(char **buffer)
 {
 	char	*line;
 	char	*keep;
@@ -57,7 +57,7 @@ static char	*get_current_buffer(int fd, char *buffer)
 			return (NULL);
 		}
 		current[bytes] = '\0';
-		buffer = merge_last_current(buffer, current);
+		buffer = merge_last_and_current(buffer, current);
 	}
 	free (current);
 	if (strlen_at(buffer, '\0') > 0)

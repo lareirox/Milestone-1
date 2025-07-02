@@ -1,0 +1,46 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    todo                                               :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/18 19:07:37 by nugoncal          #+#    #+#              #
+#    Updated: 2025/06/18 19:08:46 by nugoncal         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+fazer makefile com exec para testar,
+
+ver o leak no test 9 com buffer 10 e read error
+
+estudar makefile
+
+BUFFER_SIZE: 10
+Invalid fd          : 1.OK 2.OK 3.OK 4_LEAKS.OK 
+empty.txt           : 1.OK 2.OK 3_LEAKS.OK 
+1char.txt           : 1.OK 2.OK 3_LEAKS.OK 
+one_line_no_nl.txt  : 1.OK 2.OK 3_LEAKS.OK 
+only_nl.txt         : 1.OK 2.OK 3_LEAKS.OK 
+multiple_nl.txt     : 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7_LEAKS.OK 
+variable_nls.txt    : 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9.OK 10.OK 11.OK 12.OK 13.OK 14_LEAKS.OK 
+lines_around_10.txt : 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7_LEAKS.OK 
+giant_line.txt      : 1.OK 2.OK 3_LEAKS.OK 
+giant_line_nl.txt   : 1.OK 2.OK 3.OK 4_LEAKS.OK 
+
+read_error.txt      : 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9_LEAKS.KO 
+
+Segmentation fault (core dumped)
+make: [Makefile:24: mandatory] Error 139 (ignored)
+
+Errors found:
+
+To see the tests open: /home/nugoncal/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Norminette Errors: main.c
+
+Failed tests: fsoares
+

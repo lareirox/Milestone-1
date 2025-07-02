@@ -6,7 +6,7 @@
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 12:29:17 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/06/07 12:43:10 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:35:33 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 size_t	strlen_at(const char *s, int c);
 char	*cpy_buffer(const char *s, size_t n);
 char	*find_chr(const char *s, int c);
-char	merge_last_current(char *s1, const char *s2);
+char	*merge_last_and_current(char *s1, const char *s2);
 
 #endif

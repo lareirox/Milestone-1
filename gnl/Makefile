@@ -19,6 +19,8 @@ CFLAGS = -Wall -Wextra - Werror
 AR = ar -rcs
 RM = rm -fr
 
+BUFFER_SIZE = -D BUFFER_SIZE=42
+
 all: $(NAME)
 
 clean:
