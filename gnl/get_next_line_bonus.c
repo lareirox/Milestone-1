@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nugoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 12:43:49 by nugoncal          #+#    #+#             */
-/*   Updated: 2025/07/02 11:26:11 by nugoncal         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:49:27 by nugoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*get_line(char **buffer)
 {
@@ -68,39 +68,19 @@ static char	*get_current_buffer(int fd, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[MAX_FILES];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= MAX_FILES)
 		return (NULL);
-	buffer = get_current_buffer(fd, buffer);
-	if (!buffer)
+	buffer[fd] = get_current_buffer(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = get_line(&buffer);
-	if (buffer && buffer[0] == '\0')
+	line = get_line(&buffer[fd]);
+	if (buffer && buffer[fd][0] == '\0')
 	{
-		free (buffer);
-		buffer = NULL;
+		free (buffer[fd]);
+		buffer[fd] = NULL;
 	}
 	return (line);
 }
-/* 
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("text.txt", O_RDONLY);
-	if (fd == -1)
-	{
-		printf("Error: Could not open text.txt\n");
-		return (1);
-	}
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("%s", line);
-		free(line);
-	}
-	close(fd);
-	return (0);
-}  */
